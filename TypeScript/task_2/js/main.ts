@@ -1,4 +1,4 @@
-// ----- Interfaces -----
+// ========== Interfaces ==========
 interface DirectorInterface {
   workFromHome(): string;
 
@@ -15,7 +15,7 @@ interface TeacherInterface {
   workTeacherTasks(): string;
 }
 
-// ----- Classes -----
+// ========== Classes ==========
 class Director implements DirectorInterface {
   workFromHome() {
     return "Working from home";
@@ -44,7 +44,7 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// ----- Functions -----
+// ========== Functions ==========
 function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === "number" && salary < 500) {
     return new Teacher();
@@ -64,7 +64,17 @@ function executeWork(employee: Teacher | Director): string {
   }
 }
 
-// ----- Logs -----
+type Subjects = "Math" | "History";
+
+function teachClass(todayClass: Subjects) {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else if (todayClass == "History") {
+    return "Teaching History"
+  }
+}
+
+// ========== Logs ==========
 // Teacher
 let emp: Director | Teacher = createEmployee(200);
 console.log(emp.constructor.name);
@@ -79,3 +89,9 @@ console.log(executeWork(emp));
 emp = createEmployee('$500');
 console.log(emp.constructor.name);
 console.log(executeWork(emp));
+
+// Teaching Math
+console.log(teachClass("Math"));
+
+// Teaching History
+console.log(teachClass("History"));

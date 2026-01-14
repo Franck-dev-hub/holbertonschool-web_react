@@ -6,6 +6,7 @@ interface Teacher {
   fullTimeEmployee: boolean,
   yearsOfExperience?: number,
   location: string,
+
   [key: string]: any,
 }
 
@@ -22,11 +23,12 @@ interface printTeacherFunction {
 // Student class interface
 interface StudentClassInterface {
   workOnHomework(): string;
+
   displayName(): string;
 }
 
 interface StudentClassConstructor {
-  new (firstName: string, lastName: string): StudentClassInterface;
+  new(firstName: string, lastName: string): StudentClassInterface;
 }
 
 // ----- Classes -----

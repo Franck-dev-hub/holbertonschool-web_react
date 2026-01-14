@@ -27,7 +27,7 @@ const student2: Student = {
 const studentList: Student[] = [student1, student2];
 
 // Define columns
-const columns: {key: keyof Student; label: string}[] = [
+const columns: { key: keyof Student; label: string }[] = [
   {key: "firstName", label: "First name"},
   {key: "location", label: "Location"},
 ];
@@ -38,7 +38,7 @@ const header: HTMLTableSectionElement = table.createTHead();
 const headerRow: HTMLTableRowElement = header.insertRow();
 
 // Add header cells
-columns.forEach(({ label }) => {
+columns.forEach(({label}) => {
   const th: HTMLTableCellElement = document.createElement("th");
   th.textContent = label;
   th.className = "header-cell";
@@ -48,10 +48,10 @@ columns.forEach(({ label }) => {
 // Populate table with data
 const tbody = table.createTBody();
 
-studentList.forEach(( student ) => {
+studentList.forEach((student) => {
   const row: HTMLTableRowElement = tbody.insertRow();
 
-  columns.forEach(({ key }) => {
+  columns.forEach(({key}) => {
     const cell = row.insertCell();
     cell.textContent = String(student[key]);
   });

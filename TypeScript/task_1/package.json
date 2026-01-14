@@ -6,7 +6,7 @@
   "mode": "development",
   "scripts": {
     "start-dev": "webpack",
-    "dev": "webpack serve --mode development",
+    "dev": "webpack serve --mode development --port 8000",
     "build": "webpack --mode production",
     "test": "jest"
   },
